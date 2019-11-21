@@ -9,14 +9,12 @@ public class Firing : MonoBehaviour
     public string Shoot;
     public float ShellForce = 1f;
     private float lastFiredTime = 0f;
-    public Timer timer;
-    public GameObject tm;
+   // public Timer timer;
+   // public GameObject tm;
 
        void Start()
     {
-        timer =tm.GetComponent<Timer>();
-        
-
+       // timer =tm.GetComponent<Timer>();
     }
 
     void Update()
@@ -32,7 +30,7 @@ public class Firing : MonoBehaviour
     void Fire()
     {
         string o = this.gameObject.name;
-        Debug.Log(o);
+        Debug.Log(o + " fired");
         
         GameObject Shell = Instantiate(ShellPrefab, FirePoint.position, FirePoint.rotation);
        // Shell.GetOwner(o);

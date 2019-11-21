@@ -14,8 +14,9 @@ public class Shell : MonoBehaviour
         {
             Debug.Log("HIT " + collision.gameObject.name);
 
+            // FindObjectOfType<AudioManager>().Play("TankExplosion");
+
             Tank tank = collision.gameObject.GetComponent<Tank>();
-           // FindObjectOfType<AudioManager>().Play("TankExplosion");
             tank.Destroy();
             
         }

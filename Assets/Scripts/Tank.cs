@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Tank : MonoBehaviour
 {
@@ -30,6 +31,11 @@ public class Tank : MonoBehaviour
     float rotateSpeedMax = 130f;
 
     public GameObject hitEffect;
+
+    public static int scoreValue1 = 0;
+    public static int scoreValue2 = 0;
+    
+
 
     void Update()
     {
@@ -122,10 +128,26 @@ public class Tank : MonoBehaviour
 
     public void Destroy()
     {
+
+        Debug.Log(this.gameObject + " has died" );
         Destroy(this.gameObject);
         GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
         Destroy(effect, 10f);
-        Application.LoadLevel(Application.loadedLevel);
+		SceneManager.LoadScene(Application.loadedLevel);
+
+        Score s = new Score();
+        if (this.gameObject.name.Contains("Tank Player 1"))
+        {
+            Debug.Log("Player Two wins!");
+            s.PlayerTwoScored();
+        }
+        else if (this.gameObject.name.Contains("Tank Player 2"))
+        {
+            Debug.Log("Player One wins!");
+            s.PlayerOneScored();
+        }
+        else { return; }
 
     }
+	
 }

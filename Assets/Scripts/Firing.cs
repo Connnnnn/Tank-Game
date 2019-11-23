@@ -9,13 +9,6 @@ public class Firing : MonoBehaviour
     public string Shoot;
     public float ShellForce = 1f;
     private float lastFiredTime = 0f;
-   // public Timer timer;
-   // public GameObject tm;
-
-       void Start()
-    {
-       // timer =tm.GetComponent<Timer>();
-    }
 
     void Update()
     {
@@ -23,7 +16,6 @@ public class Firing : MonoBehaviour
         {
             lastFiredTime = Time.time;
             Fire();
-            //timer.Reload();
         }
     }
 
@@ -33,7 +25,6 @@ public class Firing : MonoBehaviour
         Debug.Log(o + " fired");
         
         GameObject Shell = Instantiate(ShellPrefab, FirePoint.position, FirePoint.rotation);
-       // Shell.GetOwner(o);
         Rigidbody2D rb = Shell.GetComponent<Rigidbody2D>();
         rb.AddForce(FirePoint.up * ShellForce, ForceMode2D.Impulse);
 

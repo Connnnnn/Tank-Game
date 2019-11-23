@@ -18,7 +18,7 @@ public class Shell : MonoBehaviour
 
             Tank tank = collision.gameObject.GetComponent<Tank>();
             tank.Destroy();
-            
+
         }
         hit = true;
         GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);

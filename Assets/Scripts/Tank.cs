@@ -35,7 +35,9 @@ public class Tank : MonoBehaviour
     public static int scoreValue1 = 0;
     public static int scoreValue2 = 0;
     
-
+    //private GameObject Gun = GameObject.Find("TankGun");
+    //private GameObject Hull = GameObject.Find("TankHull");
+    //private GameObject Tower = GameObject.Find("TankTower");
 
     void Update()
     {
@@ -109,7 +111,6 @@ public class Tank : MonoBehaviour
         else if (sceneName == "Main Menu") {
             trackLeft.animator.SetBool("isMoving", true);
             trackRight.animator.SetBool("isMoving", true);
-            Debug.Log("Tracks moving on Menu");
         }
     }
 
@@ -129,25 +130,28 @@ public class Tank : MonoBehaviour
     public void Destroy()
     {
 
-        Debug.Log(this.gameObject + " has died" );
-        Destroy(this.gameObject);
+        Debug.Log(this.gameObject + " has died");
         GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
         Destroy(effect, 10f);
-		SceneManager.LoadScene(Application.loadedLevel);
+        Destroy(this.gameObject);
 
-        Score s = new Score();
+        GameObject SC = GameObject.Find("ScoreCanvas");
+        Score s = SC.GetComponent<Score>();
+
         if (this.gameObject.name.Contains("Tank Player 1"))
         {
             Debug.Log("Player Two wins!");
             s.PlayerTwoScored();
         }
-        else if (this.gameObject.name.Contains("Tank Player 2"))
+        if (this.gameObject.name.Contains("Tank Player 2"))
         {
             Debug.Log("Player One wins!");
             s.PlayerOneScored();
-        }
-        else { return; }
 
+        }
+        if (s.GameIsOver == false)
+        {
+            SceneManager.LoadScene(Application.loadedLevel);
+        }
     }
-	
 }

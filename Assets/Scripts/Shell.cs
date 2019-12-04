@@ -5,25 +5,27 @@ using UnityEngine;
 public class Shell : MonoBehaviour
 {
     public GameObject hitEffect;
-    private bool hit;
 
-
+    //Used to check if it hits the tank to play the tank explosion clip and send us to Tanks destroy method
+    //Else, it hits a wall and the regular effect is played
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.name.Contains("Tank"))
         {
             Debug.Log("HIT " + collision.gameObject.name);
 
-            // FindObjectOfType<AudioManager>().Play("TankExplosion");
+            FindObjectOfType<AudioManager>().Play("Player Death");
 
             Tank tank = collision.gameObject.GetComponent<Tank>();
             tank.Destroy();
 
         }
-        hit = true;
-        GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
-        Destroy(effect, 1f);
-        Destroy(gameObject);
+        else {
+            FindObjectOfType<AudioManager>().Play("Wall Hit");
+            GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
+            Destroy(effect, 1f);
 
+        }
+        Destroy(gameObject);
     }
 }

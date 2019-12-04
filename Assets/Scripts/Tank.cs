@@ -34,11 +34,8 @@ public class Tank : MonoBehaviour
 
     public static int scoreValue1 = 0;
     public static int scoreValue2 = 0;
-    
-    //private GameObject Gun = GameObject.Find("TankGun");
-    //private GameObject Hull = GameObject.Find("TankHull");
-    //private GameObject Tower = GameObject.Find("TankTower");
 
+    //The Update function is used to add force for movement in given directions and to set the animations going
     void Update()
     {
         Scene currentScene = SceneManager.GetActiveScene();
@@ -114,6 +111,7 @@ public class Tank : MonoBehaviour
         }
     }
 
+    //TrackStrart and TrackStop is used to start and stop the animations of the tank tracks
     void trackStart()
     {
         trackLeft.animator.SetBool("isMoving", true);
@@ -126,10 +124,9 @@ public class Tank : MonoBehaviour
         trackRight.animator.SetBool("isMoving", false);
     }
 
-
+    //The destroy method is used to instantaite the explosion animation, and to call the score script to let whoever didnt die score
     public void Destroy()
     {
-
         Debug.Log(this.gameObject + " has died");
         GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
         Destroy(effect, 10f);
@@ -140,14 +137,13 @@ public class Tank : MonoBehaviour
 
         if (this.gameObject.name.Contains("Tank Player 1"))
         {
-            Debug.Log("Player Two wins!");
+            Debug.Log("Player Two wins round!");
             s.PlayerTwoScored();
         }
         if (this.gameObject.name.Contains("Tank Player 2"))
         {
-            Debug.Log("Player One wins!");
+            Debug.Log("Player One wins round!");
             s.PlayerOneScored();
-
         }
         if (s.GameIsOver == false)
         {

@@ -15,6 +15,9 @@ public class Score : MonoBehaviour
     public bool GameIsOver = false;
     public static int WinAmount = 1;
 
+    //I use the Score script to keep track of the score of the 2 enemies and to display this each time a player scores
+    //It also is used to check if either player has won
+
      void Start()
     {
         WinAmount = PlayerPrefs.GetInt("ScoreLimit", 0);
@@ -25,7 +28,6 @@ public class Score : MonoBehaviour
         score1.text = "Score: " + scoreValue1;
         score2.text = "Score: " + scoreValue2;
     }
-    
 
     public void PlayerOneScored() {
 

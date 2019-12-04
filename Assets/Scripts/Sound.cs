@@ -4,8 +4,9 @@ using UnityEngine;
 [System.Serializable]
 public class Sound{
 
-    public string name;
+    //Sound is an array used to set up custom settings for each sound in the AudioManager
 
+    public string name;
     public AudioClip clip;
 
     [Range(0f, 1f)]
@@ -13,5 +14,8 @@ public class Sound{
     [Range(.1f, 3f)]
     public float pitch;
 
-    
+    public bool loop;
+
+    [HideInInspector]
+    public AudioSource source;
 }

@@ -1009,14 +1009,14 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &555857487
 RectTransform:
@@ -1031,7 +1031,7 @@ RectTransform:
   m_Children:
   - {fileID: 825164768}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1050,6 +1050,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daa68e4acec698e40a3880052275a949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dropdown: {fileID: 0}
   pauseMenuUI: {fileID: 825164767}
 --- !u!1 &618668073
 GameObject:
@@ -1223,6 +1224,7 @@ GameObject:
   - component: {fileID: 642242267}
   - component: {fileID: 642242269}
   - component: {fileID: 642242270}
+  - component: {fileID: 642242271}
   m_Layer: 0
   m_Name: Tank Player 1
   m_TagString: Untagged
@@ -1269,7 +1271,8 @@ MonoBehaviour:
   keyMoveReverse: s
   keyRotateRight: d
   keyRotateLeft: a
-  hitEffect: {fileID: 60119914559981558, guid: 29550a46d6d525f43b94f0a9dfc584c4, type: 3}
+  hitEffect: {fileID: 6437656665032524922, guid: a2fc598b40de9d24892211795390ac3c,
+    type: 3}
 --- !u!61 &642242264
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1287,8 +1290,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.34, y: 0.96}
-    newSize: {x: 0.67, y: 0.48}
+    oldSize: {x: 6.7, y: 4.8}
+    newSize: {x: 6.7, y: 4.8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -1313,8 +1316,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.34, y: 0.96}
-    newSize: {x: 0.67, y: 0.48}
+    oldSize: {x: 6.7, y: 4.8}
+    newSize: {x: 6.7, y: 4.8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -1339,8 +1342,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.34, y: 0.96}
-    newSize: {x: 0.67, y: 0.48}
+    oldSize: {x: 6.7, y: 4.8}
+    newSize: {x: 6.7, y: 4.8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -1428,7 +1431,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.67, y: 0.48}
+  m_Size: {x: 6.7, y: 4.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -1444,8 +1447,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: c65e3dfbca8319f4a89adc2283bd11d1, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1530,6 +1533,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &642242271
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642242261}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7c361e2fc81f13045ab9562a076146e2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &760174724
 GameObject:
   m_ObjectHideFlags: 0
@@ -5605,7 +5627,7 @@ RectTransform:
   - {fileID: 961234934}
   - {fileID: 293170618}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5706,7 +5728,7 @@ RectTransform:
   - {fileID: 618668074}
   - {fileID: 105866463}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6219,11 +6241,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trackLeft: {fileID: 1604495243}
   trackRight: {fileID: 1829227748}
-  keyMoveForward: up
-  keyMoveReverse: down
-  keyRotateRight: right
-  keyRotateLeft: left
-  hitEffect: {fileID: 60119914559981558, guid: 29550a46d6d525f43b94f0a9dfc584c4, type: 3}
+  keyMoveForward: i
+  keyMoveReverse: k
+  keyRotateRight: l
+  keyRotateLeft: j
+  hitEffect: {fileID: 6437656665032524922, guid: a2fc598b40de9d24892211795390ac3c,
+    type: 3}
 --- !u!4 &1049935911
 Transform:
   m_ObjectHideFlags: 0
@@ -6232,7 +6255,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1049935905}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 26.768084, y: 15.128094, z: 0}
+  m_LocalPosition: {x: 26, y: 15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1604495246}
@@ -6453,7 +6476,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1095565913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6461,11 +6484,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1095565912}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d03775e6ea91d7c40b3f5959b45624ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sounds:
+  - name: Player Death
+    clip: {fileID: 8300000, guid: f657dc62ba0b50642b191a31f3afa943, type: 3}
+    volume: 1
+    pitch: 1.38
+    loop: 0
+    source: {fileID: 0}
+  - name: Wall Hit
+    clip: {fileID: 8300000, guid: c65e3dfbca8319f4a89adc2283bd11d1, type: 3}
+    volume: 1
+    pitch: 1.38
+    loop: 0
+    source: {fileID: 0}
+  vol: {fileID: 0}
 --- !u!4 &1095565914
 Transform:
   m_ObjectHideFlags: 0
@@ -7290,7 +7327,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1584845849
 GameObject:

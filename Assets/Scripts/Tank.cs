@@ -44,7 +44,7 @@ public class Tank : MonoBehaviour
         //I set up 2 checks
         //The first that operations will run as normal and the input of the user will determine If the Tracks will move and if the tank will move if the main game is the current scene 
         //The second that if the scene is the main menu then the animations of the tanks tracks moving will play constantly, without moving the tank
-        if (sceneName == "Game Scene")
+        if (sceneName == "1 Game Scene" || sceneName == "2 Game Scene" || sceneName == "3 Game Scene")
         {
 
             rotateLeft = (Input.GetKeyDown(keyRotateLeft)) ? true : rotateLeft;

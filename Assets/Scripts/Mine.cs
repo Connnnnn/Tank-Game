@@ -19,6 +19,7 @@ public class Mine : MonoBehaviour
     }
 
     // Update is called once per frame
+    //What is going on here??
     void Update()
     {
         countdown -= Time.deltaTime;

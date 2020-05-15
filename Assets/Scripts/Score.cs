@@ -38,6 +38,9 @@ public class Score : MonoBehaviour
             
             score1.text = "Score: " + scoreValue1;
         }
+        //have the below case be the final else 
+        //have an else if to check if it is the final game and if not continue going 
+        //(maybe do it witht he below)
         else if (scoreValue1+1 >= WinAmount)
         {
             scoreValue1 = 0;
@@ -58,6 +61,7 @@ public class Score : MonoBehaviour
 
             score2.text = "Score: " + scoreValue2;
         }
+        //Do the same as the comment above in P1
         else if (scoreValue2+1 >= WinAmount)
         {
             scoreValue1 = 0;
